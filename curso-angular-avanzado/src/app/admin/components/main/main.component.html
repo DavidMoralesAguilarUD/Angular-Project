@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h3>{{title}}</h3>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/admin-panel/listado">Listado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin-panel/crear">Crear</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin-panel/editar">Editar</a>
+                </li>
+              </ul>
+              </div>
+        <div class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

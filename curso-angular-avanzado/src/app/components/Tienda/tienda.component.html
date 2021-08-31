@@ -1,0 +1,14 @@
+<a class="boton_activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
+    <span *ngIf="status == 'Inactive'">Boton inactivo</span>
+    <span *ngIf="status == 'Active'">Boton Activado</span>
+</a>
+
+<hr>
+<a class="boton_transiciones">Transiciones</a>
+
+
+<h1> {{ titulo}} </h1>
+<ul>
+    <li>Camiseta Rosa</li>
+    <li>Gorra rosa </li>
+</ul>
