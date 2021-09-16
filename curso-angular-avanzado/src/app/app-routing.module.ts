@@ -6,6 +6,10 @@ import { ContactComponent } from './components/Contact/contact.component';
 import { HomeComponent } from './components/Home/home.component';
 import { KeepersComponent } from './components/Keepers/keepers.component';
 import { TiendaComponent } from './components/Tienda/tienda.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -14,7 +18,11 @@ const routes: Routes = [
   {path: 'animales', component: AnimalsComponent},
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'contacto', component: ContactComponent},
-  {path: 'tienda', component: TiendaComponent}
+  {path: 'tienda', component: TiendaComponent},
+  {path: 'registro', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'mis-datos', component: UserEditComponent}
+
 
 ];
 

@@ -1,0 +1,5 @@
+1. git clone https://github.com/DavidMoralesAguilarUD/Angular-Project.git
+2. git status
+3. git add .
+4. git commit -m "Carpetas front-end y back-end"
+5. git push origin main (la rama en el repositorio)

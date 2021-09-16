@@ -22,7 +22,6 @@ function pruebas(req, res) {
 function saveUser(req, res) {
     // Crear objeto usuario
     var user = new User();
-    console.log(user);
 
     // Recoger parámetros petición
     var params = req.body
@@ -78,17 +77,14 @@ function login(req, res) {
     var params = req.body;
     var email = params.email;
     var password = params.password;
-    console.log(req.body)
     User.findOne({ email: email.toLowerCase() }, (err, user) => {
-        console.log(user)
         if (err) {
             res.status(500).send({ message: 'Error al comprobar el usuario' });
         } else {
-            console.log(user);
             if (user) {
                 bcrypt.compare(password, user.password, (err, check) => {
                     if (check) {
-                        if (params.gettoken) {
+                        if (params.getToken) {
                             // devolver el token  jwt
                             res.status(200).send({
                                 token: jwt.createToken(user)
@@ -239,6 +235,7 @@ function getkeepers(req, res){
         }
     })
 }
+
 module.exports = {
     pruebas,
     saveUser,
@@ -247,4 +244,5 @@ module.exports = {
     uploadImage,
     getimageFile,
     getkeepers
+   
 };

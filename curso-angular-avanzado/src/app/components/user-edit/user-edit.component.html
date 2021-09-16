@@ -1,0 +1,38 @@
+<div class="col-lg-6">
+    <div class="alert-success" *ngIf="status == 'success'">
+       Has actualizado tu información correctamente<a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+    </div>
+    <div class="alert-danger" *ngIf="status == 'error'">
+        No has actualizado tu información correctamente
+    </div>
+
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10">
+        <p>
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required />
+            <!--Mensaje de validación - nombre-->
+            <span *ngIf="!name.valid && name.touched">
+                El nombre es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Apellidos</label>
+            <input type="text" name="name" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
+            <!--Mensaje de validación - apellido-->
+            <span *ngIf="!surname.valid && surname.touched">
+                El apellido es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Correo electrónico</label>
+            <input type="text" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required />
+            <!--Mensaje de validación - email-->
+            <span *ngIf="!email.valid && email.touched">
+                El correo es obligatorio
+            </span>
+
+        </p>
+        <input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!userEditForm.form.valid" />
+    </form>
+
+</div>
