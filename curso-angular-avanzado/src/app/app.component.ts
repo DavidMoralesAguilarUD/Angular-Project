@@ -1,6 +1,7 @@
 import { Component, DoCheck, OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
 import { Router, ActivatedRoute, Params } from "@angular/router";
+import { GLOBAL } from './services/global';
 
 
 @Component({
@@ -12,6 +13,7 @@ import { Router, ActivatedRoute, Params } from "@angular/router";
 export class AppComponent implements OnInit,DoCheck {
   public title: string = 'NGZOO';
   public identity: any;
+  public url: string;
   public token: string;
 
   constructor(
@@ -21,6 +23,7 @@ export class AppComponent implements OnInit,DoCheck {
     this.token = '';
     this.identity = '';
     this.title = 'NGZOO';
+    this.url = GLOBAL.url;
   }
 
   ngOnInit(){

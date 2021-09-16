@@ -47,6 +47,9 @@
     </div>
     <div class="collapse navbar-collapse flex-grow-0">
       <ul class="navbar-nav navbar-right" *ngIf="identity.name">
+        <li class="avatar">
+          <img src="{{ url + 'get-image-file/' + identity.image}}"/>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             {{identity.name}}

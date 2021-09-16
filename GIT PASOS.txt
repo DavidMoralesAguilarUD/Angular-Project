@@ -3,3 +3,6 @@
 3. git add .
 4. git commit -m "Carpetas front-end y back-end"
 5. git push origin main (la rama en el repositorio)
+
+Se puede copiar un archivo de un pc a otro y hacer git status y el mismo proceso
+hasta el paso 5. 

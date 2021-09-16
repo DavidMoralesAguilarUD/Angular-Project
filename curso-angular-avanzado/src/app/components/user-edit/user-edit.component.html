@@ -1,6 +1,7 @@
 <div class="col-lg-6">
     <div class="alert-success" *ngIf="status == 'success'">
-       Has actualizado tu información correctamente<a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+        Has actualizado tu información correctamente<a class="nav-link" routerLink="/login"
+            routerLinkActive="active">Login</a>
     </div>
     <div class="alert-danger" *ngIf="status == 'error'">
         No has actualizado tu información correctamente
@@ -17,7 +18,8 @@
         </p>
         <p>
             <label>Apellidos</label>
-            <input type="text" name="name" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required />
+            <input type="text" name="name" #surname="ngModel" [(ngModel)]="user.surname" class="form-control"
+                required />
             <!--Mensaje de validación - apellido-->
             <span *ngIf="!surname.valid && surname.touched">
                 El apellido es obligatorio
@@ -30,6 +32,10 @@
             <span *ngIf="!email.valid && email.touched">
                 El correo es obligatorio
             </span>
+        </p>
+        <p>
+            <label>Sube tu Avatar</label>
+            <input type="file" placeholder="Subir Imagen" (change)="fileChangeEvent($event)" />
 
         </p>
         <input type="submit" value="{{title}}" class="btn btn-primary" [disabled]="!userEditForm.form.valid" />
