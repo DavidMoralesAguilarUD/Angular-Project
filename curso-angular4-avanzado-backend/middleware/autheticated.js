@@ -7,7 +7,7 @@ var secret = 'clave_secreta_del_curso_de_angular4avanzado';
 exports.ensureAuth = function (req, res, next) {
     if (!req.headers.authorization) {
         return res.status(403).send({
-            message: 'La petición no tien la cabecerade autenticación'
+            message: 'La petición no tien la cabecera de autenticación'
         })
     }
 

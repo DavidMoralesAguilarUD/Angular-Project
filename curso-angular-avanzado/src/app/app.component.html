@@ -55,8 +55,21 @@
             {{identity.name}}
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item"  href="/mis-datos"><span class="bi bi-gear"></span> Mis Datos</a></li>
-            <li><a class="dropdown-item" (click)="logout()"><span class="bi bi-gear"></span>Salir</a></li>
+            <li *ngIf="identity && identity.role == 'ROLE_ADMIN'">
+              <a class="dropdown-item"  href="/admin-panel">
+                <span class="bi bi-gear"></span> Administración
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item"  href="/mis-datos">
+                <span class="bi bi-gear"></span> Mis Datos
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="logout()">
+                <span class="bi bi-gear"></span> Salir
+              </a>
+            </li>
           </ul>
         </li>
       </ul>

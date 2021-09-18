@@ -1,18 +1,34 @@
-<h3>{{title}}</h3>
+<div class="col-lg-10">
+    <h3>{{title}}</h3>
 
-<form>
-    <p>
-        <label >Nombre</label>
-        <input type="text" class="form-control"/>
-    </p>
-    <p>
-        <label>Descripción</label>
-        <textarea class="form-control"></textarea>
-    </p>
-    <p>
-        <label>Año</label>
-        <input type="text" class="form-control"/>
-    </p>
-    <input type="submit" value="Crear nuevo" class="btn btn-success">
+    <form #formAdd="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label>Nombre</label>
+            <input type="text" name="name" #name="ngModel" [(ngModel)]="animal.name" class="form-control" required/>
+            <span *ngIf="!name.valid && name.touched">
+                El nombre es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Descripción</label>
+            <textarea name="description" #description="ngModel" [(ngModel)]="animal.description" 
+            class="form-control" required></textarea>
+            <span *ngIf="!description.valid && description.touched">
+                La descripción es obligatoria
+            </span>
+        </p>
+        <p>
+            <label>Año</label>
+            <input type="text" name="year" #year="ngModel" [(ngModel)]="animal.year" class="form-control" required/>
+            <span *ngIf="!year.valid && year.touched">
+                El año es obligatorio
+            </span>
+        </p>
+        <p>
+            <label>Imagen del animal</label>
+            <input type="file" placeholder="Subir imagen...." (change)="fileChangeEvent($event)"/>
+        </p>
+        <input type="submit" value="Crear Animal" class="btn btn-success">
 
-</form>
+    </form>
+</div>

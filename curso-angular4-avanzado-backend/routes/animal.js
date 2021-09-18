@@ -17,7 +17,7 @@ api.post('/registerAnimal', [md_auth.ensureAuth, md_admin.isAdmin],AnimalControl
 api.get('/list_animals',AnimalController.getAnimales);
 api.get('/animal/:id',AnimalController.getAnimal);
 api.put('/update-animal/:id', [md_auth.ensureAuth, md_admin.isAdmin], AnimalController.updateAnimal);
-api.post('/upload-image-animal/:id', [md_auth.ensureAuth, md_admin.isAdmin],AnimalController.uploadImage);
+api.post('/upload-image-animal/:id', [md_auth.ensureAuth, md_admin.isAdmin, md_upload],AnimalController.uploadImage);
 api.get('/get-image-animal/:imageFile', AnimalController.getimageFile);
 api.delete('/delete-animal/:id', [md_auth.ensureAuth, md_admin.isAdmin], AnimalController.deleteAnimal);
 

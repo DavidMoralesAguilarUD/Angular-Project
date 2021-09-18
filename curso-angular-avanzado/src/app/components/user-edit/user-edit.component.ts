@@ -22,6 +22,7 @@ export class UserEditComponent implements OnInit{
     public status:string;
     public filesToUpload: Array<File> = []; 
     public url: string;
+    
 
 
     constructor(

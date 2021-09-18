@@ -31,7 +31,12 @@ export class UserService {
         let params = JSON.stringify(user_to_login);
         let options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
         //console.log(_options.get('Content-Type'));
-        return this._http.post(this.url + 'login', params, options);
+        const animal = this._http.post(this.url+'login', params, options);
+        console.log(animal);
+        
+
+        
+        return this._http.post(this.url+'login', params, options);
 
     }
     getIdentity() {

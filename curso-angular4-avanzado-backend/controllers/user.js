@@ -113,6 +113,7 @@ function updateUser(req, res) {
     var userId = req.params.id;
     var update = req.body;
     var params = req.body;
+    delete update.password;
 
     if (params.name != '' && params.surname != '' && params.email && params.role != 'ROLE_ADMIN') {
         // Si el id del usuario logueado es diferente al id del usuario viene de la url, entonces retornar error 500
@@ -161,6 +162,7 @@ function uploadImage(req, res) {
     var userId = req.params.id;
     var file_name = 'No subido...';
     var files = req.files;
+    console.log(files);
 
     if (files) {
         var file_path = req.files.image.path;
@@ -209,12 +211,18 @@ function uploadImage(req, res) {
 function getimageFile(req, res){
     var imageFile = req.params.imageFile;
     var path_file = './upload/users/'+imageFile;
+    var path_error_image = './upload/users/NoImage.jpg';
     if(imageFile){
         fs.access(path_file, (err) =>{
             if(!err){
                 res.status(200).sendFile(path.resolve(path_file));
             } else{
-                res.status(404).send({ messsage: 'La imagen no existe' });
+                if(err){
+                    res.status(200).sendFile(path.resolve(path_error_image));
+
+                }
+                
+                
             }
         })
 

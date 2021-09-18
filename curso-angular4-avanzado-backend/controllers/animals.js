@@ -67,8 +67,8 @@ function getAnimales(req, res) {
                 }
                 Object.assign(names)       
                 res.status(200).send({
-                    //names,
-                    animals
+                    names,
+                    //animals
                     
                 });
             }
@@ -136,7 +136,6 @@ function uploadImage(req, res) {
         var file_path = req.files.image.path;
         var file_split = file_path.split('\\');
         var file_name = file_split[2];
-
         var ext_split = file_name.split('\.');
         var file_ext = ext_split[1]
 
@@ -146,6 +145,7 @@ function uploadImage(req, res) {
                     res.status(500).send({ message: 'Error al actualizar el animal' });
                 } else {
                     if (animalUpdated) {
+                        console.log(animalUpdated);
                         res.status(200).send({ animal: animalUpdated, image: file_name });
                         // Cuando existe un el animal en la base de datos
                     } else {
