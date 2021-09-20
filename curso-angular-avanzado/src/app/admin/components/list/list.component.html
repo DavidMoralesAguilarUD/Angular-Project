@@ -1,4 +1,10 @@
 <div class="container">
+    <div class="alert-danger" *ngIf="status == 'error'">
+        No hay datos.
+    </div>
+    <div class="alert-danger" *ngIf="status == 'error2'">
+        Pagina no encontrada.
+    </div>
     <div class="row">
         <div class="col">
             <h3>{{title}}</h3>
@@ -7,13 +13,15 @@
                     <tr>
                         <th>Nombre</th>
                         <th>Año</th>
+                        <th>Descripción</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let n of numbers; let i = index" >
-                        <td>Oso Panda {{i + 1 }}</td>
-                        <td>2021</td>
+                    <tr *ngFor="let animal of animals" >
+                        <td>{{animal.name}}</td>
+                        <td>{{animal.year}}</td>
+                        <td>{{animal.description}}</td>
                         <td>
                             <button class="btn btn-sm btn-success">
                                 Ver

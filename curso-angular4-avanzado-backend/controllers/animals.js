@@ -67,8 +67,8 @@ function getAnimales(req, res) {
                 }
                 Object.assign(names)       
                 res.status(200).send({
-                    names,
-                    //animals
+                    //names,
+                    animals
                     
                 });
             }

@@ -211,7 +211,7 @@ function uploadImage(req, res) {
 function getimageFile(req, res){
     var imageFile = req.params.imageFile;
     var path_file = './upload/users/'+imageFile;
-    var path_error_image = './upload/users/NoImage.jpg';
+    var path_error_image = './upload/users/NoImage.png';
     if(imageFile){
         fs.access(path_file, (err) =>{
             if(!err){
