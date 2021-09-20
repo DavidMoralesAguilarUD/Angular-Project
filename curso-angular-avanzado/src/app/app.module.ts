@@ -20,6 +20,7 @@ import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 
 
 
@@ -34,7 +35,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     TiendaComponent,
     RegisterComponent,
     LoginComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
 
 
   ],

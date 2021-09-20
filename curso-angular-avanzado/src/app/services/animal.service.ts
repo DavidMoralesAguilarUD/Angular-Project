@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
 import { GLOBAL } from './global';
 
@@ -26,4 +26,13 @@ export class AnimalService {
         
         return this._http.get(this.url+'list_animals');
     }
+
+    getAnimal(id: string): Observable<any>{
+        
+        
+        
+        return this._http.get(this.url+'animal/' + id);
+    }
+
+
 }   

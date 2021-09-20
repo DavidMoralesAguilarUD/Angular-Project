@@ -9,6 +9,8 @@ import { TiendaComponent } from './components/Tienda/tienda.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
+
 
 
 const routes: Routes = [
@@ -21,6 +23,7 @@ const routes: Routes = [
   {path: 'tienda', component: TiendaComponent},
   {path: 'registro', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'animal/:id', component: AnimalDetailComponent},
   {path: 'mis-datos', component: UserEditComponent}
 
 

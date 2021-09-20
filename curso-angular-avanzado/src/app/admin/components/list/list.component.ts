@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimalService } from '../../../services/animal.service';
 import { Animal } from '../../../models/animal';
-import { isEmpty } from 'rxjs/operators';
 @Component({
   selector: 'admin-list',
   templateUrl: './list.component.html',
