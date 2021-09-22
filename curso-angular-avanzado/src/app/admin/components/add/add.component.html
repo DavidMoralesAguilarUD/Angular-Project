@@ -24,11 +24,16 @@
                 El año es obligatorio
             </span>
         </p>
+        <div *ngIf="is_edit && animal.image">
+            <div class="image_for_edit">
+                <img src="{{url + 'get-image-animal/' + animal.image}}" />
+            </div> 
+        </div>
         <p>
             <label>Imagen del animal</label>
             <input type="file" placeholder="Subir imagen...." (change)="fileChangeEvent($event)"/>
         </p>
-        <input type="submit" value="Crear Animal" class="btn btn-success">
+        <input type="submit" value="{{title}}" class="btn btn-success">
 
     </form>
 </div>

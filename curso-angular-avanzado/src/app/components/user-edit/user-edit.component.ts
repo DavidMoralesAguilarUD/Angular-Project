@@ -26,8 +26,6 @@ export class UserEditComponent implements OnInit{
 
 
     constructor(
-        private _route: ActivatedRoute,
-        private _router: Router,
         private _userService: UserService,
         private _uploadService: UploadService
 

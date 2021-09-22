@@ -5,6 +5,7 @@ import { AnimalService } from '../../../services/animal.service';
 import { UserService } from '../../../services/user.service';
 import { UploadService } from '../../../services/upload.service';
 import { Animal } from '../../../models/animal';
+
 @Component({
   selector: 'admin-add',
   templateUrl: './add.component.html',
@@ -17,7 +18,8 @@ export class AddComponent implements OnInit {
   public url: string;
   public token:any;
   public status;
-  public filesToUpload: Array<File> = []; 
+  public filesToUpload: Array<File> = [];
+  public is_edit; 
 
 
   constructor(
@@ -34,14 +36,18 @@ export class AddComponent implements OnInit {
     this.token = this._userService.getToken();
     this.url = GLOBAL.url;
     this.status = '';
+    this.is_edit = false;
 
 
   }
   ngOnInit() {
     console.log('animal-add componente ha sido cargado !!');
+    
+    
 
   }
   onSubmit() {
+    
     this._animalService.addAnimal(this.token, this.animal).subscribe(
       response => {
 
@@ -67,7 +73,6 @@ export class AddComponent implements OnInit {
 
           
           }
-          //this._router.navigate(['/admin-panel/listado']); 
         }
       },
       error => {

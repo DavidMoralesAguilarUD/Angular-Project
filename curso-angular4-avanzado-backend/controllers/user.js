@@ -115,7 +115,7 @@ function updateUser(req, res) {
     var params = req.body;
     delete update.password;
 
-    if (params.name != '' && params.surname != '' && params.email && params.role != 'ROLE_ADMIN') {
+    if (params.name != '' && params.surname != '' && params.email && params.role) {
         // Si el id del usuario logueado es diferente al id del usuario viene de la url, entonces retornar error 500
         if (userId != req.user.sub) {
             return res.status(500).send({
@@ -162,7 +162,6 @@ function uploadImage(req, res) {
     var userId = req.params.id;
     var file_name = 'No subido...';
     var files = req.files;
-    console.log(files);
 
     if (files) {
         var file_path = req.files.image.path;

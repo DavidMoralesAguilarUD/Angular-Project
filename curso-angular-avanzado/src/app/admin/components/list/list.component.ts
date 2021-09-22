@@ -23,7 +23,7 @@ export class ListComponent implements OnInit {
       response => {
         const vacio = Object.keys(response.animals).length === 0;
         if (!response) {
-          this.status = 'error';
+          this.status = 'error2';
         }
         else if (vacio == true) {
           this.status = 'error';

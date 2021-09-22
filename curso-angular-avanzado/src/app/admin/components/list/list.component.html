@@ -23,15 +23,15 @@
                         <td>{{animal.year}}</td>
                         <td>{{animal.description}}</td>
                         <td>
-                            <button class="btn btn-sm btn-success">
+                            <a [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-success">
                                 Ver
-                            </button> 
-                            <button class="btn btn-sm btn-primary">
+                            </a> 
+                            <a [routerLink]="['/admin-panel/editar', animal._id]" class="btn btn-sm btn-primary">
                                 <span class="bi bi-pencil"></span>
                                 Editar
-                            </button>
+                            </a>
                             <button class="btn btn-sm btn-danger">
-                                Ver
+                                Borrar
                             </button>
                         </td>
                     </tr>
