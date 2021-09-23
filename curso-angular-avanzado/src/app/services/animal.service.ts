@@ -43,7 +43,7 @@ export class AnimalService {
 
     deleteAnimal(token: any, id: string): Observable<any>{ 
         let headers = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization':token})};
-        return this._http.delete(this.url+'animal/'+id, headers);
+        return this._http.delete(this.url+'delete-animal/'+id, headers);
     
     
     }

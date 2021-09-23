@@ -60,7 +60,8 @@ export class EditComponent implements OnInit {
         },
         error => {
           console.log(<any>error);
-          this._router.navigate(['/home']);
+          
+          this._router.navigate(['/admin-panel/editar']);
 
 
         }

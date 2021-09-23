@@ -13,7 +13,6 @@ const adminRoutes: Routes = [
         component: MainComponent,
         canActivate: [AdminGuard],
         children: [
-            { path: '', redirectTo: 'listado', pathMatch: 'full'},
             { path: 'listado', component: ListComponent},
             { path: 'crear', component: AddComponent},
             { path: 'editar/:id', component: EditComponent},

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimalService } from '../../../services/animal.service';
 import { Animal } from '../../../models/animal';
 import { UserService } from 'src/app/services/user.service';
+
 @Component({
   selector: 'admin-list',
   templateUrl: './list.component.html',
@@ -12,6 +13,7 @@ export class ListComponent implements OnInit {
   public animals: Animal[] = [];
   public status: string;
   public token: any;
+  public busqueda;
   constructor(
     private _animalService: AnimalService,
     private _userService: UserService
@@ -20,6 +22,7 @@ export class ListComponent implements OnInit {
     this.title = 'Listado de animales';
     this.status = '';
     this.token = this._userService.getToken();
+    this.busqueda = '';
   }
 
   ngOnInit() {
@@ -43,8 +46,6 @@ export class ListComponent implements OnInit {
         this.status = 'error2';
         
         console.log(<any>error);
-
-
       }
     )
     
