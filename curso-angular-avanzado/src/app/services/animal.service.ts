@@ -41,5 +41,12 @@ export class AnimalService {
         return this._http.put(this.url+'update-animal/' + id, params, headers)
     }
 
+    deleteAnimal(token: any, id: string): Observable<any>{ 
+        let headers = { headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization':token})};
+        return this._http.delete(this.url+'animal/'+id, headers);
+    
+    
+    }
+
 
 }   
