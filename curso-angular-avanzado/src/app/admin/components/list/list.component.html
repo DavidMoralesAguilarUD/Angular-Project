@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let animal of animals" >
+                    <tr *ngFor="let animal of animals | search: busqueda" >
                         <td>{{animal.name}}</td>
                         <td>{{animal.year}}</td>
                         <td>{{animal.description}}</td>
