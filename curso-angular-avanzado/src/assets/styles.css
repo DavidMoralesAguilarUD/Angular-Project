@@ -39,6 +39,17 @@ body{
   width: 35px;
   height: 35px;
 }
+.animal-image-mask, .keeper-image-mask{
+  width: 100%;
+  overflow: hidden;
+}
+
+.animal-image-mask img, .keeper-image-mask img{
+  max-height: 240px ;
+  position: relative;
+}
+
+
 .boton_transiciones{
     text-decoration: none;
     color: white;

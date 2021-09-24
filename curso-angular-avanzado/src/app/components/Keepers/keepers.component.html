@@ -1,1 +1,18 @@
-<h1> {{ title }} </h1>
+<div class="container">
+    <div class="row justify-content-start">
+        <h1> {{ title }} </h1>
+        <div class="col-sm-3" *ngFor="let keeper of keepers">
+            <div class="img-thumbnail">
+                <div class="keeper-image-mask">
+                    <img src="{{url + 'get-image-file/' + keeper.image}}" alt="{{keeper.name}}" *ngIf="keeper.image">
+                </div>
+                <div class="keeper-image-mask">
+                    <img src="https://via.placeholder.com/270x200" alt="{{keeper.name}}" *ngIf="!keeper.image">
+                </div>
+                <div class="caption">
+                    <h3>{{keeper.name + ' '+ keeper.surname}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

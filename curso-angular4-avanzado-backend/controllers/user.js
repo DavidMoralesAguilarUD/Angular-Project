@@ -171,7 +171,7 @@ function uploadImage(req, res) {
         var ext_split = file_name.split('\.');
         var file_ext = ext_split[1]
 
-        if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif') {
+        if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'jpeg' || file_ext == 'gif' || file_ext == 'jfif') {
             console.log(userId);
             console.log(req.user.sub)
             if (userId != req.user.sub) {
@@ -230,7 +230,7 @@ function getimageFile(req, res){
 }
 // Funcion que lista todos los cuidadores
 function getkeepers(req, res){
-    User.find({role:'ROLE_ADMIN'}).exec((err,users) =>{
+    User.find().exec((err,users) =>{
         if(err){
             res.status(500).send({message: 'Error en la petición'});
         } else {

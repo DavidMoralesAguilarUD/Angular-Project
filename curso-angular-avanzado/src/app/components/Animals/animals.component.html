@@ -1,1 +1,22 @@
-<h1> {{ title }} </h1>
+<div class="container">
+    <div class="row justify-content-start">
+        <h1> {{ title }} </h1>
+        <div class="col-lg-3" *ngFor="let animal of animals">
+            <div class="img-thumbnail">
+                <div class="animal-image-mask">
+                    <a [routerLink]="['/animal', animal._id]">
+                        <img src="{{url + 'get-image-animal/' + animal.image}}" alt="{{animal.name}}" *ngIf="animal.image">
+                    </a>
+                </div>
+                <div class="animal-image-mask">
+                    <a [routerLink]="['/animal', animal._id]">
+                    <img src="https://via.placeholder.com/270x200" alt="{{animal.name}}" *ngIf="!animal.image">
+                    </a>
+                </div>
+                <div class="caption">
+                    <h3><a [routerLink]="['/animal', animal._id]">{{animal.name}}</a></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
